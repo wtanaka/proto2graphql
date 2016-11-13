@@ -58,12 +58,21 @@ executable proto2graphql
   
   -- LANGUAGE extensions used by modules in this package.
   -- other-extensions:    
+
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >= 4.6.0 && <4.9,
-                       bytestring,
-                       text,
-                       protocol-buffers >= 2.4.0
+  build-depends:       base >= 4.6.0 && <4.9
+                       , bytestring
+                       , directory
+                       , filepath
+                       , mtl
+                       , text
+                       , utf8-string
+                       , parsec >= 3.1.11
+                       , protocol-buffers >= 2.4.0
+                       , protocol-buffers-descriptor >= 2.4.0
+                       , hprotoc >= 2.4.0
+                       , graphql-schema
 
   -- Directories containing source files.
   hs-source-dirs:      src

@@ -1,0 +1,31 @@
+message Referenced {
+  optional sint32 asint32 = 1;
+}
+
+message Example {
+  required string astring = 1;
+  optional double adouble = 2 [default = 3.14159];
+  repeated int32 aint32 = 3;
+  repeated int64 aint64packed = 4 [packed=true];
+  optional bool abool = 5;
+  optional bytes abytes = 6;
+  optional float afloat = 7;
+  enum MyEnum {
+    AZERO = 0;
+    AONE = 1;
+    ATWO = 2;
+  }
+  enum MyAliasEnum {
+    // Not supported by parser
+    // option allow_alias = true;
+    BZERO = 0;
+    BONE = 1;
+    BUNO = 1;
+  }
+  optional MyEnum amyenum = 8;
+  optional Referenced areferenced = 9;
+  message Inner {
+  }
+  optional Inner ainner = 10;
+  optional Example aselfref = 11;
+}
