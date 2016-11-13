@@ -2,6 +2,9 @@ SOURCES=$(shell find src -name "*.hs")
 
 all: package
 
+test:
+	cabal configure --enable-tests && cabal build && cabal test
+
 clean:
 	find . -name "*~" -exec rm \{\} \;
 	rm -rf dist
