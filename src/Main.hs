@@ -17,9 +17,11 @@
 -- You should have received a copy of the GNU General Public License
 -- along with gitstat.  If not, see <http://www.gnu.org/licenses/>.
 import qualified Data.ByteString.Lazy as BSL
+import Data.Text.Lazy (pack)
+import Data.Text.Lazy.Encoding (encodeUtf8)
 
 proto2graphql :: BSL.ByteString -> BSL.ByteString
-proto2graphql x = x
+proto2graphql x = (encodeUtf8 . pack) "Hello"
 
 main :: IO ()
 main = do
