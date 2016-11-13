@@ -1,5 +1,15 @@
 language: haskell
 ghc:
-- 7.4
-- 7.6
+# Doesn't work
+#- 7.4
+# Doesn't work
+#- 7.6
 - 7.8
+cabal:
+- cabal sandbox init
+- cabal update
+script:
+- >
+   cabal configure --enable-tests &&
+   cabal build &&
+   cabal test

@@ -60,7 +60,7 @@ executable proto2graphql
   -- other-extensions:    
   
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.8 && <4.9,
+  build-depends:       base >= 4.6.0 && <4.9,
                        bytestring,
                        text,
                        protocol-buffers >= 2.4.0
