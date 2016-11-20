@@ -18,7 +18,12 @@ dist/build/proto2graphql/proto2graphql: cabal.sandbox.config $(SOURCES)
 	cabal build
 
 .cabal-sandbox: proto2graphql.cabal
-	cabal install --only-dependencies
+	cabal install --only-dependencies --enable-tests
+
+.cabal-sandbox/bin/%: .cabal-sandbox
+	cabal install $*
+
+cabal-install: .cabal-sandbox/bin/alex .cabal-sandbox/bin/happy
 
 cabal.sandbox.config:
 	cabal sandbox init
